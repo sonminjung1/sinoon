@@ -13,8 +13,37 @@ const Login = ({setAuthenticate}) => {
   }
 
   return (
-    <Container className='login-area'>
-      <Form className='login-form' onSubmit={loginUser}>
+    <div className='login-area'>
+      <form  onSubmit={loginUser}>
+        <div className='title'>LOGIN.</div>
+        <div className='user-id'>
+          <label>E-mail </label>
+          <input type='email' placeholder='Your E-mail' />
+        </div>
+        <div className='user-pw'>
+          <label>PASSWORD</label>
+          <input type='password' placeholder='Your password'/>
+        </div>
+        <button type='submit'>Login</button>
+      </form>
+      <div className='line'></div>
+      <form>
+        <div className='title'>GUEST ORDER.</div>
+        <div className='user-id'>
+          <label>주문자명 </label>
+          <input type='text' placeholder="orderer's name" />
+        </div>
+        <div className='user-pw'>
+          <label>주문번호</label>
+          <input type='text' placeholder='orderer number'/>
+        </div>
+        <div className='user-pw'>
+          <label>주문 비밀번호</label>
+          <input type='text' placeholder='orderer password'/>
+        </div>
+        <button type='submit'>OK</button>
+      </form>
+      {/* <Form className='login-form' onSubmit={loginUser}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
@@ -33,8 +62,8 @@ const Login = ({setAuthenticate}) => {
         <Button variant="danger" type="submit">
         Submit
         </Button>
-      </Form>
-    </Container>
+      </Form> */}
+    </div>
   )
 }
 

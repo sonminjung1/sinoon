@@ -7,7 +7,8 @@
             "price":99900,
             "choice":true,
             "new":true,
-            "size":["S","M","L"]
+            "size":["S","M","L"],
+            "type":"top"
 
         },
         {
@@ -17,7 +18,9 @@
             "price":29900,
             "choice":true,
             "new":true,
-            "size":["S","M","L"]
+            "size":["S","M","L"],
+            "type":"top"
+
 
         },
         {

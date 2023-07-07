@@ -4,9 +4,12 @@ import ProductCard from './ProductCard';
 import { Container, Row, Col } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSearchParams } from 'react-router-dom';
+import Slider from './Slider';
+import Footer from './Footer';
 
 const ProductAll = () => {
   const [productList, setProductList] = useState([]);
+  
   // 검색기능
   // useSearchParams() 함수
   // URL 쿼리값을 가져오기 위해서 사용할 수 있는 리액트 훅
@@ -14,7 +17,7 @@ const ProductAll = () => {
   const getProduct = async () => {
     let searchQuery = query.get('q') || '';
     console.log('쿼리값은?', searchQuery)
-    let url = `https://my-json-server.typicode.com/sonminjung1/reacthnm/products?q=${searchQuery}`;
+    let url = `https://my-json-server.typicode.com/sonminjung1/sinoon/products?q=${searchQuery}`;
     console.log(url);
     let response = await fetch(url);
     let data = await response.json();
@@ -26,6 +29,7 @@ const ProductAll = () => {
   },[query]);
   return (
     <div>
+      <Slider />
       <Container>
         <Row>
           {productList.map((item) => (
@@ -35,6 +39,7 @@ const ProductAll = () => {
           ))}
         </Row>
       </Container>
+      <Footer />
     </div>
   )
 }
